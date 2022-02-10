@@ -37,7 +37,7 @@ jobs:
         with:
           image: ${{ steps.meta.outputs.tags }}
           run: | 
-            echo "starting thing world"
+            echo "tags: ${{ steps.meta.outputs.tags }}"
             pwd
             ls
             cd ./src/
