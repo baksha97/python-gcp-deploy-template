@@ -31,8 +31,6 @@ jobs:
     # - name: Test with pytest
     #   run: |
     #     pytest
-    - name: Hello world action step
+    - name: docker
       uses: ./.github/workflows/actions/docker # Uses an action in the root directory
-      id: hello
-      with:
-        who-to-greet: 'Mona the Octocat'
+      id: docker
