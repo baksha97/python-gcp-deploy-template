@@ -10,9 +10,18 @@ env:
   IMAGE_NAME: ${{ github.repository }}
   
 jobs:
-  run:
+  runit: 
     runs-on: ubuntu-latest
-
     steps:
-      - name: pull
-        run: docker pull ghcr.io/baksha97/python-gcp-deploy-template:main
+    - name: Checkout 
+      uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
+    - uses: addnab/docker-run-action@v3
+      with:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: ghcr.io
+        image: baksha97/python-gcp-deploy-template:main
+        options: -v ${{ github.workspace }}:/work -e ABC=123
+        run: |
+          echo "Running Script"
+          /work/run-script
