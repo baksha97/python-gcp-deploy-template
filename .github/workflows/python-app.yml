@@ -28,3 +28,6 @@ jobs:
     - name: Run it
       run: |
         python ./src/main.py
+    - name: Test with pytest
+      run: |
+        pytest
