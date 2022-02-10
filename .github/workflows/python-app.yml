@@ -31,9 +31,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest
           pip install -r requirements.txt --upgrade
-      - name: Run it
-        run: |
-          python ./src/main.py
       - name: Test with pytest
         run: |
           pytest
