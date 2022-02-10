@@ -2,5 +2,5 @@ FROM python:3.8
 WORKDIR /src
 COPY . .
 RUN pwd
-RUN pip install -r requirements.txt
+RUN pip install -r ../requirements.txt
 ENV PORT=80
