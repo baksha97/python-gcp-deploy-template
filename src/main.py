@@ -1,8 +1,8 @@
 from dotenv import load_dotenv, dotenv_values
 import discord
 
-load_dotenv() 
-config = dotenv_values("config.env")
+# load_dotenv() 
+config = dotenv_values(".env")
 
 client = discord.Client()
 

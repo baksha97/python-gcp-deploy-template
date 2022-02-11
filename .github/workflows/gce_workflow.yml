@@ -6,8 +6,6 @@ name: Deploy to GCE
 on: [workflow_dispatch]
 
 env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
   PROJECT_ID: ${{ secrets.GCE_PROJECT }}
   GCE_INSTANCE: container-1
   GCE_INSTANCE_ZONE: us-east1-b   
@@ -19,18 +17,12 @@ jobs:
     permissions:
       contents: 'read'
       id-token: 'write'
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Add env vars
         run: |
-          echo '${{ secrets.BOT_TOKEN }}' > config.env
-          echo "where am i?"
-          cat config.env
-
-          # Configure Workload Identity Federation and generate an access token.
-
+          echo '${{ secrets.PYTHON_ENV }}' > .env
       # Alternative option - authentication via credentials json
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
