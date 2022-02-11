@@ -9,11 +9,11 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
   PROJECT_ID: ${{ secrets.GCE_PROJECT }}
-  GCE_INSTANCE: discord-bot  
+  GCE_INSTANCE: container-1
   GCE_INSTANCE_ZONE: us-east1-b   
   
 jobs:
-  runit: 
+  deploy: 
     runs-on: [self-hosted, Linux]
     # Add "id-token" with the intended permissions.
     permissions:
