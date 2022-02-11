@@ -26,6 +26,9 @@ jobs:
       - name: Add env vars
         run: |
           echo "BOT_TOKEN={{ secrets.BOT_TOKEN }}" >> .env
+          pwd
+          ls
+          
           # Configure Workload Identity Federation and generate an access token.
 
       # Alternative option - authentication via credentials json
